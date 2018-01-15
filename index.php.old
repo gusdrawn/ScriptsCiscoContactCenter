@@ -1,0 +1,19 @@
+<?php
+
+$link = mssql_connect('banesco', 'cuicsa', 'BAN35c02013');
+ 
+if (!$link)
+    die('Unable to connect!');
+ echo 'se conecto!!';
+if (!mssql_select_db('baucc_hds', $link))
+    die('Unable to select database!');
+ echo 'se conecto a la bd!';
+$result = mssql_query("select * from [baucc_awdb].[dbo].[Termination_Call_Detail] INNER JOIN [baucc_awdb].[dbo].[Agent] ON Termination_Call_Detail.AgentPeripheralNumber =  Agent.PeripheralNumber where Description = 'ACD001'");
+var_dump ($result);
+
+while ($row = mssql_fetch_array($result)) {
+    var_dump($row);
+}
+ 
+echo mssql_free_result($result);
+?>
