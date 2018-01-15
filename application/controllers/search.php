@@ -1,18 +1,17 @@
 	<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 	/*
 		Autor: Gustavo Guillen
-		
-		
-		Primera Version de ART
+
+		Script principal donde se observa la configuracion para Generar los Scripts.
 
 	*/
 	class Search extends CI_Controller {
 		function __construct()    {
 			parent::__construct();
 	    }
-		
+
 		public function index()    {
-			
+
 			$this->load->helper('url');
 			$this->load->helper('form');
 			$this->load->helper('date');
@@ -23,7 +22,7 @@
 			);
 			$this->load->view('header');
 			$this->load->view('panel', $data);
-			$this->load->view('footer');		
+			$this->load->view('footer');
 		}
 		public function reporte()    {
 			global $datos;
@@ -772,9 +771,9 @@ hostname 3560_".$region[$datos['region']]."_".$datos['agencia']."\r
 boot-start-marker\r
 boot-end-marker\r
 !\r".'
-enable secret 5 $1$ZvfR$.OwFFP73KYXFFH4dh7YRP/'."\r
+enable secret 5 XXX/'."\r
 !\r
-username emergencia password 7 03544B5A575822561E0C\r
+username emergencia password 7 XXX\r
 !\r
 !\r
 no aaa new-model\r
@@ -783,7 +782,7 @@ authentication mac-move permit\r
 ip subnet-zero\r
 !\r
 !\r
-ip domain-name banesco.com\r
+ip domain-name XXX.com\r
 !\r
 mls qos map policed-dscp  24 26 46 to 0\r
 mls qos srr-queue input bandwidth 90 10\r
@@ -892,33 +891,18 @@ access-list 99 permit 10.124.7.133\r
 access-list 99 deny   any log\r
 snmp-server engineID local 00000009020000070EED4940\r
 snmp-server community sw1tch3sB@n RO 99\r
-snmp-server community R0ut3rsB@n RO 99\r
-snmp-server community te!3comBan RO 99\r
+snmp-server community XXX RO 99\r
+snmp-server community XXX RO 99\r
 snmp-server location Agencia ".$datos['nro']."\r
 snmp-server contact Gerencia de Telecomunicaciones Tlf 5018989\r
-snmp-server host 10.1.13.180 R0ut3rsB@n \r
-snmp-server host 10.1.13.182 R0ut3rsB@n \r
-snmp-server host 10.132.71.134 te!3comBan \r
-tacacs-server key 7 0010400A57585B0B1D341C\r
+snmp-server host 10.1.13.180 XXX \r
+snmp-server host 10.1.13.182 XXX \r
+snmp-server host 10.132.71.134 XXX \r
+tacacs-server key 7 XXX\r
 !\r
 banner motd ^CCCC\r
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\r
-*                          **                             *\r
-*                         ****                            *\r
-*                          ** **                          *\r
-*                            ****                         *\r
-*                          ** **                          *\r
-*                       * **** *                          *\r
-*                    ***   **   ***                       *\r
-*                   ***          ***                      *\r
-*                   ****************                      *\r
-*                     ************                        *\r
-*                                                         *\r
-*                        BANESCO                          *\r
-*                   ACCESO RESTRINGIDO                    *\r
-*           SOLO PERSONAL AUTORIZADO POR BANESCO          *\r
-*                                                         *\r
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\r
+
 ^C\r
 !\r
 line con 0\r
@@ -986,7 +970,7 @@ lease 0 8\r
 ip flow-cache timeout active 1\r
 no ip bootp server\r
 no ip domain lookup\r
-ip domain name intra.banesco.com\r
+ip domain name intra.XXX.com\r
 !\r
 !\r
 !\r
@@ -1064,7 +1048,7 @@ service alternate default\r
 ".$quitado."\r
 !\r
 !\r
-username emergencia password 7 03544B5A575822561E0C\r
+username emergencia password 7 XXX\r
 !\r
 redundancy\r
 !\r
@@ -1294,8 +1278,8 @@ access-list 99 deny   any log\r
 !\r
 !\r
 snmp-server engineID local 000000090200000A0AD05B81\r
-snmp-server community R0ut3rsB@n RO 99\r
-snmp-server community te!3comBan RO 99\r
+snmp-server community XXX RO 99\r
+snmp-server community XXX RO 99\r
 snmp-server community m0d!FyBan RW 99\r
 snmp-server ifindex persist\r
 snmp-server trap-source Loopback0\r
@@ -1309,14 +1293,14 @@ snmp-server enable traps config\r
 snmp-server enable traps entity\r
 snmp-server enable traps ipmulticast\r
 snmp-server enable traps msdp\r
-snmp-server host 10.1.0.38 R0ut3rsB@n \r
-snmp-server host 10.1.13.180 R0ut3rsB@n \r
-snmp-server host 10.1.13.182 R0ut3rsB@n \r
-snmp-server host 10.1.36.107 R0ut3rsB@n \r
-snmp-server host 10.1.7.5 R0ut3rsB@n \r
-snmp-server host 10.1.8.213 R0ut3rsB@n \r
+snmp-server host 10.1.0.38 XXX \r
+snmp-server host 10.1.13.180 XXX \r
+snmp-server host 10.1.13.182 XXX \r
+snmp-server host 10.1.36.107 XXX \r
+snmp-server host 10.1.7.5 XXX \r
+snmp-server host 10.1.8.213 XXX \r
 snmp-server host 10.132.71.134 m0d!FyBan \r
-snmp-server host 10.132.71.134 te!3comBan \r
+snmp-server host 10.132.71.134 XXX \r
 tacacs-server host 10.1.8.105\r
 tacacs-server host 10.1.9.96\r
 tacacs-server host 10.0.20.63\r
@@ -1494,22 +1478,6 @@ ip source-address ".$datos['ip1']." port 2000\r
 !\r
 banner motd ^CC\r
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\r
-*                          **                             *\r
-*                         ****                            *\r
-*                          ** **                          *\r
-*                            ****                         *\r
-*                          ** **                          *\r
-*                       * **** *                          *\r
-*                    ***   **   ***                       *\r
-*                   ***          ***                      *\r
-*                   ****************                      *\r
-*                     ************                        *\r
-*                                                         *\r
-*                        BANESCO                          *\r
-*                   ACCESO RESTRINGIDO                    *\r
-*           SOLO PERSONAL AUTORIZADO POR BANESCO          *\r
-*                                                         *\r
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\r
 ^C\r
 !\r
 line con 0\r
@@ -1555,7 +1523,7 @@ end\n";
 		$this->load->view('header');
 		$this->load->view('search',$query);
 		$this->load->view('footer');
-		
+
 	}
-		
+
 	}

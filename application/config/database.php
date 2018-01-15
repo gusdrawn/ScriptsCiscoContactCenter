@@ -48,11 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'banesco';
+$db['default']['hostname'] = 'xxx';
 //$db['default']['port'] = 1433;
-$db['default']['username'] = 'cuicsa';
-$db['default']['password'] = 'BAN35c02013';
-$db['default']['database'] = 'baucc_hds';
+$db['default']['username'] = 'xxx';
+$db['default']['password'] = 'xxx';
+$db['default']['database'] = 'xxx_hds';
 $db['default']['dbdriver'] = 'mssql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = FALSE;
